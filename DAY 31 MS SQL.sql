@@ -1,3 +1,4 @@
+create database Payroll_Services --UC1
 create table Employee_Payroll(EmpId int IDENTITY, EmpName varchar(100),Salary int,StartDate Date) --UC2
 
 SET IDENTITY_INSERT
