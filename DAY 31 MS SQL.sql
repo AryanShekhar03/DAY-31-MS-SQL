@@ -24,7 +24,7 @@ insert into
 
  select * from Employee_Payroll --UC4
  Select salary from Employee_Payroll where EmpName = 'Rahul' --UC5
- select * from Employee_Payroll where start BETWEEN CAST('2018-09-05') AND (NOW('2021-05-25')); --UC5
+ select * from Employee_Payroll where start BETWEEN CAST('2018-09-05 AS DATE') AND (NOW()); --UC5
 
  ALTER TABLE Employee_Payroll  --UC6
  ADD Gender varchar;
@@ -61,3 +61,12 @@ where Gender = 'M' Group BY Gender
 select COUNT(Salary) from Employee_Payroll  --UC7
 where Gender = 'F' Group BY Gender
 
+ALTER TABLE Employee_Payroll  --UC8
+ ADD EmpPhone VARCHAR(40);
+
+UPDATE [Employee_Payroll] SET EmpPhone = 9999999875 WHERE EmpName = 'Rahul';
+UPDATE [Employee_Payroll] SET EmpPhone = '9876543213' WHERE EmpName = 'Rohit';
+UPDATE [Employee_Payroll] SET EmpPhone = '1234567891' WHERE EmpName =  'Sam';
+UPDATE [Employee_Payroll] SET EmpPhone = '0864246789' WHERE EmpName = 'Karn'; 
+UPDATE [Employee_Payroll] SET EmpPhone = '1235790965' WHERE EmpName = 'Cris';
+UPDATE [Employee_Payroll] SET EmpPhone = '7776664321' WHERE EmpName = 'Abhinav';
